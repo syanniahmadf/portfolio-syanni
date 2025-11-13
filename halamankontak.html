@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Saya</title>
+  <link rel="icon" href="img/profil.jpg" type="image/jpg">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #0078D4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005a9e;
+    }
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #0078D4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .home-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hubungi Saya</h1>
+    <form action="mailto:emailkamu@example.com" method="POST" enctype="text/plain">
+      <label for="name">Nama</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Pesan</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Kirim Pesan</button>
+    </form>
+    <a href="index.html" class="home-link">← Kembali ke Home</a>
+  </div>
+</body>
+</html>
