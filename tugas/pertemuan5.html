@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STMIK Mardira Indonesia</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="imgtugas/imgpertemuan5/logo.jpg">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;   
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+header {
+  background-color: #0a3a60;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+nav ul li a:hover {
+  opacity: 0.8;
+}
+.btn-follow {
+  background-color: #ff4c00;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* HERO SECTION */
+.hero {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 200px; /* jarak kiri-kanan */
+  max-width: 1100px;
+}
+.hero-left img {
+  width: 220px;
+  height: auto;
+}
+.hero-right {
+  text-align: left;
+}
+.hero-right h1 {
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 10px;
+}
+.hero-right h1 span {
+  color: #e63c00;
+}
+.hero-right p {
+  margin: 6px 0;
+  color: #444;
+}
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #0a3a60;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #08406f;
+}
+
+/* PROGRAM STUDI */
+.program {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.program h2 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+}
+.program p {
+  color: #555;
+  margin-bottom: 25px;
+}
+.program-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 200px;
+}
+.program .card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%; /* logo bulat */
+  margin-bottom: 10px;
+}
+.card p {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* UKM */
+.ukm {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;   /* jarak ke footer */
+}
+.ukm h2 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+}
+.ukm p {
+  color: #555;
+  margin-bottom: 25px;
+}
+.ukm .program-list {
+  display: flex;              /* ubah dari grid ke flex */
+  flex-wrap: wrap;            /* biar bisa turun ke baris baru kalau kepanjangan */
+  justify-content: center;    /* sejajarkan horizontal di tengah */
+  gap: 20px;                  /* jarak antar card */
+}
+.ukm .card {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 180px;
+  transition: transform 0.3s;
+  width: 200px; 
+}
+.ukm .card:hover {
+  transform: translateY(-5px);
+}
+.ukm .card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 8px;
+}
+.ukm .card p {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hamburger default hidden */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;              /* sembunyikan menu */
+    flex-direction: column;
+    background-color: #0a3a60;
+    position: absolute;
+    top: 60px;                  /* di bawah navbar */
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
+    display: flex;              /* tampilkan menu saat aktif */
+  }
+
+  .hamburger {
+    display: block;             /* tampilkan ikon hamburger */
+    color: white;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: #0a3a60;
+  color: white;
+  padding: 15px 20px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-logo {
+  width: 20px;
+  height: auto;
+  border-radius: 50%; /* bulat */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-right h1 {
+    font-size: 22px;
+  }
+  .program-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .ukm .program-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .program-list {
+    grid-template-columns: 1fr;
+  }
+  .ukm .program-list {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+  <div class="navbar">
+    <div class="logo">STMIK - MI</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#program">Program Studi</a></li>
+        <li><a href="#ukm">UKM</a></li>
+        <li><a href="#" class="btn-follow">Follow Us</a></li>
+      </ul>
+    </nav>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+  </div>
+</header>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <img src="imgtugas/imgpertemuan5/logo.jpg" alt="Logo STMIK Mardira Indonesia">
+      </div>
+      <div class="hero-right">
+        <h1>STMIK MARDIRA <br><span>INDONESIA</span></h1>
+        <p>Jl. Soekarno Hatta Jl. Leuwi Panjang No.211</p>
+        <p>Kunjungi Situs Resmi Kami</p>
+        <a href="#" class="btn">Klik disini !</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Studi -->
+<section id="program" class="program">
+  <h2>Program Studi</h2>
+  <p>Terdapat 4 Program Studi di STMIK Mardira Indonesia, diantaranya:</p>
+  <div class="program-list">
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/ti.jpg" alt="Logo TI"><br><br>
+      <p>Teknik Informatika S1 <br>Teknik Informatika D3</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/ka.png" alt="Logo KA">
+      <p>Komputerisasi Akutansi</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/mi.png" alt="Logo MI">
+      <p>Manajemen Informatika</p>
+    </div>
+  </div>
+</section>
+
+<!-- UKM -->
+<section id="ukm" class="ukm">
+  <h2>Unit Kegiatan Mahasiswa (UKM)</h2>
+  <p>Berbagai UKM di STMIK Mardira Indonesia yang dapat diikuti mahasiswa:</p>
+  <div class="program-list">
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/udmi.jpg" alt="Logo UKM UDMI">
+      <p>Unit Kegiatan Mahasiswa UDMI</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/walet.jpg" alt="Logo UKM WALET">
+      <p>Unit Kegiatan Mahasiswa WALET</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/pmk.jpg" alt="Logo UKM PMK">
+      <p>Persekutuan Mahasiswa Kristen (PMK)</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/kst.jpg" alt="Logo UKM KST">
+      <p>Komunitas Seni dan Teater (KST)</p>
+    </div>
+    <div class="card">
+      <img src="imgtugas/imgpertemuan5/csa.jpg" alt="Logo UKM CSA">
+      <p>Creative Student Association (CSA)</p>
+    </div>
+  </div>
+</section>
+
+  <footer>
+  <div class="footer-content">
+    <img src="imgtugas/imgpertemuan5/logo.jpg" alt="Logo STMIK Mardira Indonesia" class="footer-logo">
+    <p>&copy; 2025 STMIK Mardira Indonesia</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
